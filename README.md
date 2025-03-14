@@ -1,9 +1,15 @@
+Prerequisites:
+    Docker Installed
+    git fork from pacman nginx
+Config:
+    sudo usermod -aG docker $USER <------ correr sem sudo
+==========================================================================================
 First step: Implementing a basic nginx image in a docker
 
-    sudo docker run -it --rm -d -p 8080:80 --name web nginx
-    sudo docker stop web
+     docker run -it --rm -d -p 8080:80 --name web nginx
+     docker stop web
 
-Outcome: Works:)! Tested in http://localhost:80
+Outcome: Works:D! Tested in http://localhost:80
 ===========================================================================================
 Second step: Create dockerfile
 
@@ -16,16 +22,14 @@ Second step: Create dockerfile
 ===========================================================================================
 Third Step: Building the docker
 
-    sudo docker build -t pacman-game .
-    sudo docker run -d -p 8080:80 --name pacman-container pacman-game <-- in localhost its
-                                                                          80 in container 
-                                                                          its 80
+    docker build -t pacman-game .
+    docker run -d -p 8080:80 --name pacman-container pacman-game <-- in localhost its 8080
+                                                                     in container 80
 Help:
-    sudo docker ps
-    sudo docker stop <name>
-    sudo docker rm <name>
+    docker ps
+    docker stop <name>
+    docker rm <name>
     To test websites its easier on private browser mode to avoid cookies
 Outcome:
-    Pacman Game Working:)!
+    Pacman Game Working:D!
 ===========================================================================================
-
